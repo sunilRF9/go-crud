@@ -1,16 +1,14 @@
-package main 
+package main
 
 import (
-	"os"
-	"github.com/sunilRF9/go-crud/routes"
 	"github.com/gin-gonic/gin"
-
+	"github.com/sunilRF9/go-crud/routes"
+	"os"
 )
 
-
-func main () {
+func main() {
 	port := os.Getenv("PORT")
-	if port == ""{
+	if port == "" {
 		port = "8000"
 	}
 
@@ -29,5 +27,5 @@ func main () {
 
 	router.DELETE("/entry/delete/:id", routes.DeleteEntry)
 
-	router.Run(":"+port)
+	router.Run(":" + port)
 }
